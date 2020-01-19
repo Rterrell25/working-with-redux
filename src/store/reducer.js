@@ -3,6 +3,28 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  if (action.type === "INCREMENT") {
+    return {
+      counter: state.counter + 1
+    };
+  }
+  if (action.type === "DECREMENT") {
+    return {
+      counter: state.counter - 1
+    };
+  }
+  if (action.type === "ADD_COUNTER") {
+    return {
+      ...state,
+      counter: state.counter + action.value
+    };
+  }
+  if (action.type === "MINUS_COUNTER") {
+    return {
+      ...state,
+      counter: state.counter - action.value
+    };
+  }
   return state;
 };
 
